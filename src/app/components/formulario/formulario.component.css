@@ -1,0 +1,52 @@
+.form-container{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 500px;
+    padding: 16px;
+    margin: 10px auto;
+    background: #f7f7f7;
+}
+.form-container h1{
+    background: #d143d1;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #f7f7f7;
+    margin: -16px;
+}
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="number"]{
+   transition: all 0,30s ease-in-out;
+   outline: none;
+   box-sizing: border-box;
+   width: 100%;
+   background: #fff;
+   margin-bottom: 4%;
+   border:1px solid #cccccc;
+   padding: 3%;
+   color: #555;
+   font: 95%;
+}
+.form-container .btn-send{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #43d1af;
+    border-bottom: 2px solid #30F;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+}
+.form-container .btn-send:hover:not([disabled]){
+    background: #2ebc99;
+}
+.alert-danger{
+    color:#721;
+    background: #f8daf8;
+    border-color: #000000;
+    margin: 5px;
+}
+.container-error-message{
+    padding: 3px;
+}

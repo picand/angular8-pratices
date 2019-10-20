@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+<div class="form-container">
+    <h1>Validacion</h1>
+    <form [formGroup]="formulario" (ngSubmit) ="onSaveForm()">
+        <input type="text" formControlName="texto" placeholder="Texto">
+        <div class="alert-danger" *ngIf="texto.invalid && (texto.dirty || texto.touched)">
+            <div class="container-error-message" *ngIf="texto.errors.required">
+                Texto obligatorio
+            </div>
+            <div class="container-error-message" *ngIf="texto.errors.minlength">
+                Minimo 10 caracteres
+            </div> 
+        </div>
+        <input type="email" formControlName="email" placeholder="Email">
+        <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div class="container-error-message" *ngIf="email.errors.required">
+                email obligatorio
+            </div>
+            <div class="container-error-message" *ngIf="email.errors.minlength">
+                Minimo 5 caracteres
+            </div> 
+            <div class="container-error-message" *ngIf="email.errors.email">
+                mail no valido
+            </div>
+        </div>
+        <input type="number" formControlName="numero" placeholder="Numero" >
+        <div class="alert-danger" *ngIf="numero.invalid && (numero.dirty || numero.touched)">
+            <div class="container-error-message" *ngIf="numero.errors.required">
+                numero obligatorio
+            </div>
+            <div class="container-error-message" *ngIf="numero.errors.minlength">
+                Minimo 1 caracteres
+            </div> 
+            <div class="container-error-message" *ngIf="(numero.dirty || numero.touched) && numero.invalid && numero.errors.pattern">
+                numero no valido
+            </div> 
+        </div>
+       
+        <button type="submit" class="btn-send" [disabled] ="!formulario.valid">Validar</button>
+    </form>
+</div>
